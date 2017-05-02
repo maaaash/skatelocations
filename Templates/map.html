@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Fusion Tables layers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
+      <a href="#home" class="w3-bar-item w3-button"><b>SKATE LOCATIONS</b></a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="map" class="w3-bar-item w3-button">Map</a>
+        <a href="submit" class="w3-bar-item w3-button">Submit Location</a>
+        <a href="signup" class="w3-bar-item w3-button">Get Updates</a>
+      </div>
+    </div>
+  </div>
+  
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 53.8905985, lng: -2.1307542},
+          zoom: 6
+        });
+
+        var layer = new google.maps.FusionTablesLayer({
+          query: {
+            select: '\'Geocodable address\'',
+            from: '1ndpkGJ93pQvlSrgV_6-dInDOS4elQgeJo9MkC2-_'
+          }
+        });
+        layer.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrG3bQhD6jEKFAQ6ksh7mvS3xf8C7KAvs&callback=initMap">
+    </script>
+  </body>
+</html>
