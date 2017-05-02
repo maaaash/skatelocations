@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -b "0.0.0.0:$PORT" app:submit2
+web: gunicorn -w 4 -b "0.0.0.0:$PORT" submit2:app
