@@ -1,10 +1,12 @@
+module skatelocations
+
 from flask import Flask
 from flask import render_template
 from flask import request
 from flask import make_response
 import csv
 
-app = Flask("skatelocations", template_folder='templates')
+app = Flask(__name__, template_folder='templates')
 
 
 @app.route ("/")
