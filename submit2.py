@@ -4,7 +4,7 @@ from flask import request
 from flask import make_response
 import csv
 
-app = Flask("MyApp")
+app = Flask(__name__)
 
 
 @app.route ("/")
