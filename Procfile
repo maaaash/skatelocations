@@ -1,2 +1,1 @@
-web: gunicorn 
-submit:app
+web: gunicorn submit2:app

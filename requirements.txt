@@ -8,3 +8,4 @@ packaging
 pyparsing
 six
 Werkzeug==0.12.1
+gunicorn
